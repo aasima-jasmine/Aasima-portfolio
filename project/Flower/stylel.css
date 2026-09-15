@@ -1,0 +1,165 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'arial', sans-serif;   
+}
+body{
+    background-color: #fff0f5;
+    color: #333;
+    line-height: 1.6;
+}
+header{
+    background: linear-gradient(135deg,#ff69b4,#ff1493);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: sticky;
+    top: 0px;
+    z-index: 100px;
+    box-shadow: 0 4px 8px rgba(0,0, 0, 0.2);
+}
+nav a:hover{ 
+    color: #ffff00;
+}
+.hero{
+    background-image: url(orchad.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    animation: fadein 2s ease-in;
+}
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+section{
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 1000px;
+
+}
+h2{
+    text-align: center;
+    color: #ff1493;
+    margin-bottom: 20px;
+
+}
+video,audio{
+    display: block;
+    margin: 20px auto;   
+    border-radius: 10px;   
+    box-shadow: 0 4px 10px rgba(0, 0,0,0.3);
+}
+ol,ul{
+    margin-left: 40px;
+    font-size: 18px;
+
+}
+ol li {
+    margin: 10px 0;
+}
+.flower-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+.card{
+    background: white;
+    border: 2px solid #ffb6c1;
+    border-radius: 15px;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s ease,box-shadow 0.3s ease ;
+}
+.card :hover{
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255,20,147,0.3);
+}
+.card img{
+    width: 100%;
+    border-radius: 10px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th,td{
+    border: 1px solid #ff69b4;
+    padding: 12px;
+    text-align: center;
+}
+th{
+    background-color: #ff69b4;
+    color: white;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: auto;
+}
+input ,textarea,button{
+    padding: 12px;
+    border: 2px solid #ff69b4;
+    border-radius: 8px;
+    font-size: 16px;
+}
+button{
+    background-color: #ff1493;
+    color: white;
+    cursor: pointer;
+    transition :  background   0.3s ease ;
+
+}
+button :hover{
+    background-color: #ff60b4;
+
+}
+.gallery-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+.gallery-container img{
+    width:300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+    animation:bounce 2s infinite ;
+}
+.gallery-container img:hover{
+    transform: scale(1.1) rotate(5deg) ;
+}
+@keyframes bounce{
+    0%,100%{
+        transform: translatey(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+}
+footer{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+
+}
+@media (max-width:768px){
+    .flower-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+

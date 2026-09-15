@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects | Portfolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Font Family Configuration -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Custom Fade-in Animation Styles */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 flex flex-col min-h-screen">
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="flex-grow container mx-auto px-4 py-16 max-w-6xl">
+        
+        <!-- Section Header -->
+        <header class="text-center mb-16 fade-in-section">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+                My Projects
+            </h1>
+            <p class="text-lg text-gray-600 font-normal">
+                Here are some of my recent works
+            </p>
+        </header>
+
+        <!-- Projects Grid (1 Column on Mobile, 3 Columns on Desktop) -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Project Card 1: Zoo -->
+            <article class="fade-in-section bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out flex flex-col justify-between group">
+                <div>
+                    <!-- Project Image Tag -->
+                    <div class="w-full h-52 overflow-hidden relative bg-gray-100">
+                        <img 
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_fnUGpPyx-VRYhs970PlsIW_2LHATSVe0jaWILKm7WDRxoEwaAFoLCnXlgUd-J14oMKItlOVEXtalujU437sWDtNwnRCHgutGlIpxvOuCowRlEofFpmksCXdEnfxmD9_0v-P5sxJ9JwKmnv7D6crQWju5Jl76NrljGFmCQUhFC1idJWG2NH9lhyBQk2cny7tiKltJBqjX5cuJlRlS3KO4EsSpPs4Q_mrgHSasg11fB4lQrpnVkQWq" 
+                            alt="Zoo Project Preview" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                    </div>
+                    <!-- Card Content -->
+                    <div class="p-6">
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-3">
+                            Zoo
+                        </h2>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            An interactive and responsive website about different animals in a zoo. Built with HTML, CSS, and JavaScript.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card Footer / Action -->
+                <div class="p-6 pt-0">
+                    <a href="./zoo/index.html" class="inline-block w-full text-center bg-gray-900 text-white text-sm font-medium py-3 px-6 rounded-xl hover:bg-teal-600 transition-colors duration-200 shadow-md">
+                        View Zoo Project
+                    </a>
+                </div>
+            </article>
+
+            <!-- Project Card 2: Land Birds -->
+            <article class="fade-in-section bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out flex flex-col justify-between group">
+                <div>
+                    <!-- Project Image Tag -->
+                    <div class="w-full h-52 overflow-hidden relative bg-gray-100">
+                        <img 
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFUBZ2vhoxD2R5E5bOr_4gpd91s9EgWL-cI3ntupPPxH4JXeSGKmA62R1Xr1GtxXIuhc8zF64EEhnEcyzSNKauTkIdopVkarVaynOY2xY2-LGfEWprGJY9UpbAk_VtQfO91atPdN_YJ2WElc8V5ODoGAL16dxkTppowWbw0tImsbDp9XW_ribiybvd0rKo04G8yrvROKSpefgS6EeU6m7Xl0d_RpFf3eegMk0fdEf88ElVc9VJYL3n" 
+                            alt="Land Birds Project Preview" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                    </div>
+                    <!-- Card Content -->
+                    <div class="p-6">
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-3">
+                            Land Birds
+                        </h2>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            A beautiful website showcasing information about various land birds. Focused on clean UI and responsive design.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card Footer / Action -->
+                <div class="p-6 pt-0">
+                    <a href="./land-birds/code.html" class="inline-block w-full text-center bg-gray-900 text-white text-sm font-medium py-3 px-6 rounded-xl hover:bg-orange-600 transition-colors duration-200 shadow-md">
+                        View Land Birds Project
+                    </a>
+                </div>
+            </article>
+
+            <!-- Project Card 3: Flowers -->
+            <article class="fade-in-section bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 ease-in-out flex flex-col justify-between group">
+                <div>
+                    <!-- Project Image Tag -->
+                    <div class="w-full h-52 overflow-hidden relative bg-gray-100">
+                        <img 
+                            src="flower-me.jpeg" 
+                            alt="Flowers Project Preview" 
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                    </div>
+                    <!-- Card Content -->
+                    <div class="p-6">
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-3">
+                            Flowers
+                        </h2>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            A floral gallery website with smooth animations and responsive layout. Designed using Tailwind CSS.
+                        </p>
+                    </div>
+                </div>
+                <!-- Card Footer / Action -->
+                <div class="p-6 pt-0">
+                    <a href="./Flower/index.html" class="inline-block w-full text-center bg-gray-900 text-white text-sm font-medium py-3 px-6 rounded-xl hover:bg-pink-600 transition-colors duration-200 shadow-md">
+                        View Flowers Project
+                    </a>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-gray-100 py-8 text-center text-gray-500 text-sm">
+        <p>© 2026 Aasima. All rights reserved.</p>
+    </footer>
+
+    <!-- VANILLA JAVASCRIPT FOR SCROLL FADE-IN ANIMATION -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // IntersectionObserver setup to trigger fade-in animations on scroll
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15 // Triggers when 15% of the element is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Target all elements with class 'fade-in-section'
+            const animatedElements = document.querySelectorAll('.fade-in-section');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

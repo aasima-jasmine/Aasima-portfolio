@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en" style="">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Aasima | Front-End Web Developer Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap 5 CDN -->
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['"Space Grotesk"', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome / Bootstrap Icons for crisp icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        /* Global Seamless Responsive Theme & Background Transitions */
+        *,
+        *::before,
+        *::after {
+            transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+            transition-duration: 300ms;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Ambient subtle pulse */
+        @keyframes floatSlow {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(1deg);
+            }
+        }
+
+        .floating-avatar {
+            animation: floatSlow 5s ease-in-out infinite;
+        }
+
+        /* Custom Project Card Hover */
+        .project-card {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        /* Glassmorphism utility */
+        .glass-nav {
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-gradient-to-b from-slate-50 via-indigo-50/25 to-slate-100 sm:from-slate-50 sm:via-slate-50 sm:to-indigo-50/30 lg:from-slate-50 lg:via-indigo-50/15 lg:to-slate-100 dark:bg-gradient-to-b dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white antialiased">
+    <!-- ========================================== -->
+    <!-- NAVIGATION BAR                             -->
+    <!-- ========================================== -->
+    <header
+        class="sticky top-0 z-50 glass-nav bg-white/85 sm:bg-white/80 dark:bg-slate-900/85 sm:dark:bg-slate-900/80 border-b border-slate-200/80 dark:border-slate-800 transition-colors">
+        <div class="container max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+            <!-- Logo / Brand Title -->
+            <a class="group flex items-center gap-2.5 text-decoration-none" href="#">
+                <span
+                    class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-amber-400 text-white font-bold flex items-center justify-center shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+                    A
+                </span>
+                <div>
+                    <h1
+                        class="heading-font text-lg sm:text-xl font-bold tracking-tight text-slate-900 dark:text-white m-0 p-0">
+                        My Personal Profile
+                    </h1>
+                    <p class="text-xs text-indigo-600 dark:text-indigo-400 font-medium m-0">Aasima • Web Developer</p>
+                </div>
+            </a>
+            <!-- Navigation Links -->
+            <div class="flex items-center gap-2 sm:gap-6">
+                <nav class="hidden md:flex items-center gap-1 font-medium text-sm text-slate-600 dark:text-slate-300">
+                    <a class="px-3 py-1.5 rounded-lg hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-slate-800 transition-colors text-decoration-none"
+                        href="#about">About</a>
+                    <a class="px-3 py-1.5 rounded-lg hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-slate-800 transition-colors text-decoration-none"
+                        href="./project/index.html">Projects</a>
+                    <a class="px-3 py-1.5 rounded-lg hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-slate-800 transition-colors text-decoration-none"
+                        href="./Education/code.html">Education</a>
+                    <a class="px-3 py-1.5 rounded-lg hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-slate-800 transition-colors text-decoration-none"
+                        href="./skill-section/code.html">Skill</a>
+                    <a class="px-3 py-1.5 rounded-lg hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-slate-800 transition-colors text-decoration-none"
+                        href="contact/code.html">Contact</a>
+                </nav>
+                <!-- Dark / Light Mode Toggle Button -->
+                <button aria-label="Toggle Dark/Light Mode"
+                    class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-600 dark:text-amber-400 hover:bg-slate-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-sm transition-all"
+                    id="themeToggleBtn">
+                    <i class="bi bi-moon-stars-fill text-base" id="themeIcon"></i>
+                </button>
+                <!-- Mobile Hamburger dropdown trigger for small screens -->
+                <div class="dropdown md:hidden">
+                    <button aria-expanded="false"
+                        class="btn btn-sm btn-outline-secondary dropdown-toggle py-1.5 px-2.5 rounded-lg"
+                        data-bs-toggle="dropdown" type="button">
+                        <i class="bi bi-list text-lg"></i>
+                    </button>
+                    <ul
+                        class="dropdown-menu dropdown-menu-end shadow-lg rounded-xl dark:bg-slate-800 border-slate-200 dark:border-slate-700">
+                        <li class=""><a class="dropdown-item dark:text-slate-200 dark:hover:bg-slate-700"
+                                href="#about">About</a></li>
+                        <li class=""><a class="dropdown-item dark:text-slate-200 dark:hover:bg-slate-700"
+                                href="#projects">Projects</a></li>
+                        <li class=""><a class="dropdown-item dark:text-slate-200 dark:hover:bg-slate-700"
+                                href="#education">Education</a></li>
+                        <li class=""><a class="dropdown-item dark:text-slate-200 dark:hover:bg-slate-700"
+                                href="#skills">Skill</a></li>
+                        <li class=""><a class="dropdown-item dark:text-slate-200 dark:hover:bg-slate-700"
+                                href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Container Layout with Responsive Smooth Layering -->
+    <main class="flex-grow transition-colors">
+        <!-- ========================================== -->
+        <!-- HERO SECTION (sec-1, sec-2, box1)          -->
+        <!-- ========================================== -->
+        <section
+            class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-gradient-to-b from-transparent via-indigo-50/25 sm:via-indigo-50/20 lg:via-indigo-50/10 to-transparent dark:from-transparent dark:via-indigo-950/20 dark:to-transparent"
+            id="about">
+            <!-- Ambient background glow accents with responsive tuning -->
+            <div
+                class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-96 lg:w-[32rem] h-72 sm:h-96 lg:h-[32rem] bg-indigo-400/20 sm:bg-indigo-400/15 dark:bg-indigo-500/15 rounded-full blur-3xl pointer-events-none -z-10">
+            </div>
+            <div
+                class="absolute top-1/2 right-4 sm:right-10 w-56 sm:w-72 lg:w-96 h-56 sm:h-72 lg:h-96 bg-amber-400/20 sm:bg-amber-400/15 dark:bg-amber-500/15 rounded-full blur-3xl pointer-events-none -z-10">
+            </div>
+            <div class="container max-w-6xl mx-auto px-4 sm:px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <!-- Left Column (sec-1): Welcome Copy & Action Buttons -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div
+                            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-950/70 border border-indigo-200/80 dark:border-indigo-800 text-indigo-700 dark:text-indigo-300 text-sm font-semibold tracking-wide shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                            Hello, I'm Aasima
+                        </div>
+                        <h1
+                            class="heading-font text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 dark:text-white leading-tight tracking-tight">
+                            I'm a Beginner <br class="hidden sm:inline">
+                            <span
+                                class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-amber-500 dark:from-indigo-400 dark:via-purple-300 dark:to-amber-300">
+                                Front-End Web Developer
+                            </span>
+                        </h1>
+                        <p
+                            class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                            Passionate about creating modern, responsive, and interactive websites.
+                            I specialize in HTML, CSS, and JavaScript. I focus on clean design,
+                            fast performance, and smooth user experience across all devices.
+                        </p>
+                        <!-- Call to Action Buttons -->
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                            <a class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5 transition-all text-decoration-none"
+                                href="#contact">
+                                <i class="bi bi-envelope-fill"></i>
+                                inbox
+                            </a>
+                            <span
+                                class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-slate-200/80 dark:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold border border-slate-300/80 dark:border-slate-700 hover:bg-slate-300/80 dark:hover:bg-slate-700/80 transition-all">
+                                <i class="bi bi-code-slash text-indigo-500"></i>
+                                Web Developer
+                            </span>
+                        </div>
+                        <!-- Social / Tool Links (WhatsApp, Facebook, LinkedIn, YouTube) -->
+                        <div class="pt-6">
+                            <p
+                                class="text-xs uppercase tracking-widest text-slate-400 dark:text-slate-500 font-bold mb-3">
+                                Connect With Me</p>
+                            <div class="tool flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                                <!-- WhatsApp -->
+                                <a class="group flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all text-decoration-none text-slate-700 dark:text-slate-300"
+                                    href="https://wa.me/" rel="noopener noreferrer" target="_blank" title="WhatsApp">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                        <i class="bi bi-whatsapp text-lg"></i>
+                                    </div>
+                                    <span class="text-sm font-medium capitalize">whatsapp</span>
+                                </a>
+                                <!-- Facebook -->
+                                <a class="group flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition-all text-decoration-none text-slate-700 dark:text-slate-300"
+                                    href="https://facebook.com/" rel="noopener noreferrer" target="_blank"
+                                    title="Facebook">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                        <i class="bi bi-facebook text-lg"></i>
+                                    </div>
+                                    <span class="text-sm font-medium capitalize">facebook</span>
+                                </a>
+                                <!-- LinkedIn -->
+                                <a class="group flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-sky-500 hover:text-sky-600 dark:hover:text-sky-400 transition-all text-decoration-none text-slate-700 dark:text-slate-300"
+                                    href="https://linkedin.com/" rel="noopener noreferrer" target="_blank"
+                                    title="LinkedIn">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-sky-500/10 text-sky-600 dark:text-sky-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                        <i class="bi bi-linkedin text-lg"></i>
+                                    </div>
+                                    <span class="text-sm font-medium capitalize">linkedin</span>
+                                </a>
+                                <!-- YouTube -->
+                                <a class="group flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm hover:border-red-500 hover:text-red-600 dark:hover:text-red-400 transition-all text-decoration-none text-slate-700 dark:text-slate-300"
+                                    href="https://youtube.com/" rel="noopener noreferrer" target="_blank"
+                                    title="YouTube">
+                                    <div
+                                        class="w-8 h-8 rounded-full bg-red-500/10 text-red-600 dark:text-red-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                        <i class="bi bi-youtube text-lg"></i>
+                                    </div>
+                                    <span class="text-sm font-medium capitalize">youtube</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Column (sec-2): Profile Avatar with Vibrant Gradient Ring -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative">
+                            <!-- Outer decorative gradient glow -->
+                            <div
+                                class="absolute -inset-2 rounded-full bg-gradient-to-r from-rose-500 via-amber-400 to-indigo-600 opacity-70 blur-lg transition duration-1000 group-hover:opacity-100 animate-pulse">
+                            </div>
+                            <!-- Profile Image with stylish gradient frame -->
+                            <div
+                                class="relative floating-avatar p-1.5 rounded-full bg-gradient-to-tr from-[#ff6b6b] to-[#feca57] shadow-2xl shadow-amber-500/20">
+                                <div
+                                    class="w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
+                                    <!-- Fallback stylish user avatar SVG / Image -->
+                                    <img alt="profile image" class="w-full h-full object-cover" src="image.jpeg">
+                                </div>
+                                <!-- Floating Experience Badge -->
+                                <div
+                                    class="absolute -bottom-2 right-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl px-4 py-2 shadow-xl flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                                    <div class="text-left">
+                                        <div class="text-[11px] uppercase tracking-wider text-slate-400 font-bold">
+                                            Status</div>
+                                        <div class="text-xs font-bold text-slate-800 dark:text-white">Open to Work</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ========================================== -->
+        <!-- PROJECTS SECTION (Zoo & Land Birds)       -->
+        <!-- ========================================== -->
+        <section
+            class="relative pt-16 pb-24 bg-white/95 sm:bg-white/90 lg:bg-white dark:bg-slate-900/70 sm:dark:bg-slate-900/60 lg:dark:bg-slate-900/50 border-y border-slate-200/80 dark:border-slate-800/80 transition-colors"
+            id="projects">
+            <!-- Wave Divider (Enhanced SVG top wave with harmonious responsive tone) -->
+            <div class="w-full overflow-hidden leading-none mb-6">
+                <svg class="w-full h-12 text-slate-100/90 sm:text-slate-100 dark:text-slate-950 fill-current transition-colors"
+                    preserveAspectRatio="none" viewBox="0 0 1440 120">
+                    <path d="M0,0 C320,80 640,20 960,60 C1200,90 1360,30 1440,0 L1440,120 L0,120 Z"></path>
+                </svg>
+            </div>
+            <div class="container max-w-6xl mx-auto px-4 sm:px-6">
+                <!-- Section Header -->
+                <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                    <span
+                        class="px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300">
+                        Featured Works
+                    </span>
+                    <h2 class="heading-font text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">
+                        Projects
+                    </h2>
+                    <div class="w-16 h-1 bg-gradient-to-r from-indigo-500 to-amber-500 mx-auto rounded-full"></div>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400">
+                        Explore my interactive web projects showcasing front-end craftsmanship.
+                    </p>
+                </div>
+                <!-- Projects Grid (Keeping exact links ./zoo/index.html & ./land-birds/index.html) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+                    <!-- Project 1: Zoo -->
+                    <div
+                        class="project-card group bg-slate-50 dark:bg-slate-800 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-700/80 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col">
+                        <div
+                            class="relative overflow-hidden aspect-video bg-gradient-to-br from-emerald-600 to-teal-900 flex items-center justify-center">
+                            <img alt="Zoo project cover"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_fnUGpPyx-VRYhs970PlsIW_2LHATSVe0jaWILKm7WDRxoEwaAFoLCnXlgUd-J14oMKItlOVEXtalujU437sWDtNwnRCHgutGlIpxvOuCowRlEofFpmksCXdEnfxmD9_0v-P5sxJ9JwKmnv7D6crQWju5Jl76NrljGFmCQUhFC1idJWG2NH9lhyBQk2cny7tiKltJBqjX5cuJlRlS3KO4EsSpPs4Q_mrgHSasg11fB4lQrpnVkQWq">
+                            <div class="absolute inset-0 bg-slate-950/30 group-hover:bg-slate-950/10 transition-colors">
+                            </div>
+                            <span
+                                class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-slate-800 dark:text-slate-200 shadow">
+                                Web Project
+                            </span>
+                        </div>
+                        <div class="p-6 sm:p-8 flex flex-col flex-grow justify-between space-y-4">
+                            <div>
+                                <h3
+                                    class="heading-font text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                                    Zoo
+                                </h3>
+                                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    An engaging web experience displaying animals, interactive facts, and wildlife
+                                    exhibits built with responsive styling.
+                                </p>
+                            </div>
+                            <!-- Main Required Link -->
+                            <div class="pt-2">
+                                <a class="inline-flex items-center justify-between w-full px-5 py-3 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm shadow-md shadow-indigo-500/20 group-hover:shadow-indigo-500/30 transition-all text-decoration-none"
+                                    href="./zoo/index.html">
+                                    <span class="">View Zoo Website</span>
+                                    <i
+                                        class="bi bi-arrow-right text-lg transform group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 2: Land Birds -->
+                    <div
+                        class="project-card group bg-slate-50 dark:bg-slate-800 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-700/80 shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col">
+                        <div
+                            class="relative overflow-hidden aspect-video bg-gradient-to-br from-amber-600 to-orange-900 flex items-center justify-center">
+                            <img alt="Land Birds project cover"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFUBZ2vhoxD2R5E5bOr_4gpd91s9EgWL-cI3ntupPPxH4JXeSGKmA62R1Xr1GtxXIuhc8zF64EEhnEcyzSNKauTkIdopVkarVaynOY2xY2-LGfEWprGJY9UpbAk_VtQfO91atPdN_YJ2WElc8V5ODoGAL16dxkTppowWbw0tImsbDp9XW_ribiybvd0rKo04G8yrvROKSpefgS6EeU6m7Xl0d_RpFf3eegMk0fdEf88ElVc9VJYL3n">
+                            <div class="absolute inset-0 bg-slate-950/30 group-hover:bg-slate-950/10 transition-colors">
+                            </div>
+                            <span
+                                class="absolute top-4 left-4 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-slate-800 dark:text-slate-200 shadow">
+                                Web Project
+                            </span>
+                        </div>
+                        <div class="p-6 sm:p-8 flex flex-col flex-grow justify-between space-y-4">
+                            <div>
+                                <h3
+                                    class="heading-font text-2xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                                    Land Birds
+                                </h3>
+                                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                    A vibrant showcase page presenting various bird species, natural habitats, and avian
+                                    wonders with smooth layout flows.
+                                </p>
+                            </div>
+                            <!-- Main Required Link -->
+                            <div class="pt-2">
+                                <a class="inline-flex items-center justify-between w-full px-5 py-3 rounded-2xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-semibold text-sm shadow-md shadow-amber-500/20 group-hover:shadow-amber-500/30 transition-all text-decoration-none"
+                                    href="./Land-birds/code.html">
+                                    <span class="">View Land Birds Website</span>
+                                    <i
+                                        class="bi bi-arrow-right text-lg transform group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ========================================== -->
+        <!-- SKILLS & TEMPLATE OVERVIEW (section--2)    -->
+        <!-- ========================================== -->
+        <section
+            class="py-20 lg:py-24 bg-gradient-to-b from-transparent via-slate-100/40 sm:via-indigo-50/20 lg:via-transparent to-transparent dark:from-transparent dark:via-slate-950/30 dark:to-transparent"
+            id="skills">
+            <div class="container max-w-6xl mx-auto px-4 sm:px-6">
+                <div
+                    class="bg-gradient-to-br from-indigo-900 via-slate-900 to-indigo-950 text-white rounded-3xl p-8 sm:p-12 lg:p-16 shadow-2xl relative overflow-hidden border border-indigo-800/40">
+                    <!-- Background ambient shapes -->
+                    <div
+                        class="absolute -right-16 -top-16 w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none">
+                    </div>
+                    <div
+                        class="absolute -left-16 -bottom-16 w-80 h-80 bg-amber-500/15 rounded-full blur-3xl pointer-events-none">
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+                        <!-- Left Column: Title & Tech stack icons -->
+                        <div class="lg:col-span-6 space-y-6">
+                            <span
+                                class="px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase bg-white/10 text-amber-300 border border-white/10 inline-block">
+                                Architecture &amp; Spec
+                            </span>
+                            <h2 class="heading-font text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+                                My Portfolio
+                            </h2>
+                            <p class="text-indigo-200 text-lg">
+                                Simple Template Portfolio
+                            </p>
+                            <!-- Social/Tech stack cards (HTML, CSS, JS) -->
+                            <div class="pt-2">
+                                <p class="text-xs uppercase tracking-wider text-indigo-300 font-semibold mb-3">Core
+                                    Technologies</p>
+                                <div class="flex flex-wrap items-center gap-3">
+                                    <!-- HTML5 Badge -->
+                                    <div
+                                        class="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 hover:bg-white/20 transition-all">
+                                        <div
+                                            class="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold text-lg">
+                                            <i class="bi bi-filetype-html"></i>
+                                        </div>
+                                        <div class="text-left">
+                                            <div class="text-xs text-indigo-200">Markup</div>
+                                            <div class="text-sm font-bold text-white">HTML5</div>
+                                        </div>
+                                    </div>
+                                    <!-- CSS3 Badge -->
+                                    <div
+                                        class="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 hover:bg-white/20 transition-all">
+                                        <div
+                                            class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-lg">
+                                            <i class="bi bi-filetype-css"></i>
+                                        </div>
+                                        <div class="text-left">
+                                            <div class="text-xs text-indigo-200">Styles</div>
+                                            <div class="text-sm font-bold text-white">CSS3</div>
+                                        </div>
+                                    </div>
+                                    <!-- JS Badge -->
+                                    <div
+                                        class="flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 hover:bg-white/20 transition-all">
+                                        <div
+                                            class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-lg">
+                                            <i class="bi bi-filetype-js"></i>
+                                        </div>
+                                        <div class="text-left">
+                                            <div class="text-xs text-indigo-200">Scripting</div>
+                                            <div class="text-sm font-bold text-white">JavaScript</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Right Column: Features Checklist (ul & li with tick) -->
+                        <div
+                            class="lg:col-span-6 bg-white/5 backdrop-blur-md rounded-2xl p-6 sm:p-8 border border-white/10 shadow-inner">
+                            <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                                <i class="bi bi-stars text-amber-400"></i>
+                                Key Highlights
+                            </h3>
+                            <ul class="space-y-4 m-0 p-0 list-unstyled">
+                                <li class="flex items-center gap-3 text-slate-100 font-medium text-base sm:text-lg">
+                                    <div
+                                        class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 border border-emerald-500/40">
+                                        <i class="bi bi-check2 text-sm font-bold"></i>
+                                    </div>
+                                    <span class="">Build with no framework</span>
+                                </li>
+                                <li class="flex items-center gap-3 text-slate-100 font-medium text-base sm:text-lg">
+                                    <div
+                                        class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 border border-emerald-500/40">
+                                        <i class="bi bi-check2 text-sm font-bold"></i>
+                                    </div>
+                                    <span class="">HTML, CSS and JavaScript Only</span>
+                                </li>
+                                <li class="flex items-center gap-3 text-slate-100 font-medium text-base sm:text-lg">
+                                    <div
+                                        class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 border border-emerald-500/40">
+                                        <i class="bi bi-check2 text-sm font-bold"></i>
+                                    </div>
+                                    <span class="">Simple Portfolio website</span>
+                                </li>
+                                <li class="flex items-center gap-3 text-slate-100 font-medium text-base sm:text-lg">
+                                    <div
+                                        class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 border border-emerald-500/40">
+                                        <i class="bi bi-check2 text-sm font-bold"></i>
+                                    </div>
+                                    <span class="">Free website Template</span>
+                                </li>
+                                <li class="flex items-center gap-3 text-slate-100 font-medium text-base sm:text-lg">
+                                    <div
+                                        class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 border border-emerald-500/40">
+                                        <i class="bi bi-check2 text-sm font-bold"></i>
+                                    </div>
+                                    <span class="">One Page website</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ========================================== -->
+        <!-- EDUCATION & CONTACT QUICK FORM SECTION     -->
+        <!-- ========================================== -->
+        <section
+            class="py-16 bg-slate-100/90 sm:bg-slate-100/70 lg:bg-slate-100/60 dark:bg-slate-900/50 sm:dark:bg-slate-900/40 lg:dark:bg-slate-900/30 border-t border-slate-200 dark:border-slate-800 transition-colors"
+            id="education">
+            <div class="container max-w-6xl mx-auto px-4 sm:px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- Education Column -->
+                    <div class="space-y-6">
+                        <div
+                            class="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-bold text-sm uppercase tracking-wider">
+                            <i class="bi bi-mortarboard-fill text-lg"></i>
+                            Learning Journey
+                        </div>
+                        <h2 class="heading-font text-3xl font-extrabold text-slate-900 dark:text-white">
+                            Education &amp; Foundations
+                        </h2>
+                        <!-- Timeline Item -->
+                        <div class="relative pl-6 border-l-2 border-indigo-400 dark:border-indigo-600 space-y-4">
+                            <div class="relative">
+                                <span
+                                    class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-indigo-600 ring-4 ring-white dark:ring-slate-900"></span>
+                                <span
+                                    class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-indigo-100 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300">
+                                    Self-Taught &amp; Modern Web Tracks
+                                </span>
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white mt-1">Front-End Development
+                                    Foundations</h3>
+                                <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                                    Mastered responsive layouts, semantic HTML5, modern CSS3 animations, and core
+                                    JavaScript DOM manipulation. Built realistic multi-page websites and interactive
+                                    modules.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Contact Column -->
+                    <div class="space-y-6" id="contact">
+                        <div
+                            class="inline-flex items-center gap-2 text-amber-600 dark:text-amber-400 font-bold text-sm uppercase tracking-wider">
+                            <i class="bi bi-chat-dots-fill text-lg"></i>
+                            Get In Touch
+                        </div>
+                        <h2 class="heading-font text-3xl font-extrabold text-slate-900 dark:text-white">
+                            Send Me a Message
+                        </h2>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-4">
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Email
+                                    Address</label>
+                                <input
+                                    class="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                    placeholder="aasima@example.com" type="email">
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">Message</label>
+                                <textarea
+                                    class="w-full px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                                    placeholder="Hello Aasima, let's collaborate on a web project!" rows="3"></textarea>
+                            </div>
+                            <button
+                                class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition-all shadow-md shadow-indigo-500/20"
+                                type="button">
+                                Send Message (Inbox)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- ========================================== -->
+    <!-- FOOTER                                     -->
+    <!-- ========================================== -->
+    <footer
+        class="bg-white/95 sm:bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-8 text-center transition-colors">
+        <div class="container max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-slate-500 dark:text-slate-400 m-0">
+                © 2026 <span class="font-semibold text-slate-700 dark:text-slate-300">Aasima</span>. All rights
+                reserved.
+            </p>
+            <!-- Tech stack indicators preserved from original footer -->
+            <div class="flex items-center gap-3">
+                <span class="text-xs text-slate-400 dark:text-slate-500 font-medium">Built with:</span>
+                <span
+                    class="px-2.5 py-1 rounded-md text-xs font-bold bg-orange-100 dark:bg-orange-950/60 text-orange-600 dark:text-orange-400 border border-orange-200 dark:border-orange-800">HTML5</span>
+                <span
+                    class="px-2.5 py-1 rounded-md text-xs font-bold bg-blue-100 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800">CSS3</span>
+                <span
+                    class="px-2.5 py-1 rounded-md text-xs font-bold bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-800">JavaScript</span>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script crossorigin="anonymous" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- ========================================== -->
+    <!-- VANILLA JAVASCRIPT: THEME TOGGLE & EFFECTS -->
+    <!-- ========================================== -->
+    <script>
+        // --- 1. Dark/Light Mode Switcher with LocalStorage Memory ---
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        const htmlElement = document.documentElement;
+
+        // Check user's preferred or stored theme
+        function applyTheme(isDark) {
+            if (isDark) {
+                htmlElement.classList.add('dark');
+                themeIcon.classList.remove('bi-moon-stars-fill');
+                themeIcon.classList.add('bi-sun-fill');
+            } else {
+                htmlElement.classList.remove('dark');
+                themeIcon.classList.remove('bi-sun-fill');
+                themeIcon.classList.add('bi-moon-stars-fill');
+            }
+        }
+
+        // Initialize theme based on preference or stored setting
+        const storedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (storedTheme === 'dark' || (!storedTheme && systemPrefersDark)) {
+            applyTheme(true);
+        } else {
+            applyTheme(false);
+        }
+
+        // Event listener for theme toggle button
+        themeToggleBtn.addEventListener('click', () => {
+            const isDark = htmlElement.classList.contains('dark');
+            const newThemeState = !isDark;
+            applyTheme(newThemeState);
+            localStorage.setItem('theme', newThemeState ? 'dark' : 'light');
+        });
+
+        // --- 2. Smooth active link indicator on scroll ---
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a');
+
+            let currentSection = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (window.scrollY >= sectionTop) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === `#${currentSection}`) {
+                    link.classList.add('text-indigo-600', 'dark:text-indigo-400', 'font-bold');
+                } else {
+                    link.classList.remove('text-indigo-600', 'dark:text-indigo-400', 'font-bold');
+                }
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
